@@ -18,7 +18,7 @@ I started to do this assignment yesterday. So time was a big problem for me. Oth
 # What did I learn after the study
 I learnt how to do socket programming in python3 and differences between UDP and TCP implementation.
 
-# How many dats did it take
+# How many days did it take
 I did this homework in nearly 1 day.
 6 hours for TCP part
 7 hours for UDP part.
