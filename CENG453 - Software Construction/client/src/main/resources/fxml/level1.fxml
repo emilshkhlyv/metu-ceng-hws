@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="level1pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceng453.game.controller.Level1Controller">
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/level1background.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="deckImage" fitHeight="150.0" fitWidth="200.0" layoutX="651.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/cards/backcard.png" />
+         </image>
+      </ImageView>
+   <Button fx:id="dealCardButton" layoutX="668.0" layoutY="287.0" mnemonicParsing="false" onAction="#onClickDealCardButton" style="-fx-background-radius: 60; -fx-background-color: #DCD7C3;" text="Deal Card">
+      <font>
+         <Font name="Open Sans Semibold" size="12.0" />
+      </font></Button>
+   <Label fx:id="roundLabel" layoutX="677.0" layoutY="33.0" prefHeight="37.0" prefWidth="97.0" text="Round:">
+      <font>
+         <Font name="Open Sans Semibold" size="12.0" />
+      </font>
+   </Label>
+   <Label fx:id="opponentScoreLabel" layoutX="655.0" layoutY="62.0" prefHeight="38.0" prefWidth="146.0" text="Opponent Score:">
+      <font>
+         <Font name="Open Sans Semibold" size="12.0" />
+      </font>
+   </Label>
+   <Label fx:id="yourScoreLabel" layoutX="656.0" layoutY="81.0" prefHeight="38.0" prefWidth="146.0" text="Your score:">
+      <font>
+         <Font name="Open Sans Semibold" size="12.0" />
+      </font>
+   </Label>
+</AnchorPane>

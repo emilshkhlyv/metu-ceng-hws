@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="leaderboardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceng453.game.controller.LeaderboardController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/loginBackground.png" />
+         </image>
+      </ImageView>
+      <TabPane layoutX="137.0" layoutY="96.0" prefHeight="436.0" prefWidth="522.0" stylesheets="@../css/Tabpane.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="weekly" text="Weekly">
+            <content>
+              <AnchorPane fx:id="weeklyPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="weeklyTable" layoutY="5.0" prefHeight="385.0" prefWidth="522.0">
+                            <columns>
+                                <TableColumn prefWidth="183.20001220703125" text="Username">
+                                    <cellValueFactory><PropertyValueFactory property="username" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="175.20001220703125" text="Score">
+                                    <cellValueFactory><PropertyValueFactory property="score" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="164.00006103515625" text="Date">
+                                    <cellValueFactory><PropertyValueFactory property="date" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                            </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="monthly" text="Monthly">
+            <content>
+              <AnchorPane fx:id="monthlyPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                      <TableView fx:id="monthlyTable" layoutY="5.0" prefHeight="385.0" prefWidth="522.0">
+                          <columns>
+                              <TableColumn prefWidth="183.20001220703125" text="Username">
+                                  <cellValueFactory><PropertyValueFactory property="username" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn prefWidth="175.20001220703125" text="Score">
+                                  <cellValueFactory><PropertyValueFactory property="score" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn prefWidth="164.00006103515625" text="Date">
+                                  <cellValueFactory><PropertyValueFactory property="date" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                          </columns>
+                      </TableView>
+                  </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="allRecords" text="All Records">
+               <content>
+                  <AnchorPane fx:id="allRecordsPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                          <TableView fx:id="allRecordTable" layoutY="5.0" prefHeight="385.0" prefWidth="522.0">
+                              <columns>
+                                  <TableColumn prefWidth="183.20001220703125" text="Username">
+                                      <cellValueFactory><PropertyValueFactory property="username" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="175.20001220703125" text="Score">
+                                      <cellValueFactory><PropertyValueFactory property="score" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="164.00006103515625" text="Date">
+                                      <cellValueFactory><PropertyValueFactory property="date" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                              </columns>
+                          </TableView>
+                      </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+       <ImageView fx:id="closeLeaderboard" fitHeight="31.0" fitWidth="32.0" layoutX="669.0" layoutY="109.0" onMousePressed="#onClickCloseLeaderboard" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../images/close.png" />
+           </image>
+       </ImageView>
+   </children>
+</AnchorPane>

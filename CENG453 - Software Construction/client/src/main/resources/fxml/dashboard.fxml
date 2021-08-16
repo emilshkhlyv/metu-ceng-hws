@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="dashboardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #1e6f5c;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ceng453.game.controller.DashboardController">
+    <children>
+        <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/loginBackground.png" />
+            </image>
+        </ImageView>
+        <AnchorPane fx:id="innerPane" layoutX="210.0" layoutY="94.0" prefHeight="406.0" prefWidth="379.0" style="-fx-background-color: #7c0a02; -fx-background-radius: 100;">
+            <Label alignment="CENTER" layoutX="119.0" layoutY="61.0" prefHeight="42.0" prefWidth="142.0" text="Play Pişti" textAlignment="CENTER" textFill="#dcd7c3" wrapText="true">
+                <font>
+                    <Font name="Open Sans Semibold" size="26.0" />
+                </font>
+            </Label>
+            <Button fx:id="profileButton" layoutX="85.0" layoutY="127.0" mnemonicParsing="false" onAction="#onClickProfile" prefHeight="42.0" prefWidth="211.0" style="-fx-border-radius: 60; -fx-background-radius: 60; -fx-background-color: #DCD7C3;" text="Profile" textFill="#7c0a02">
+                <font>
+                    <Font name="Open Sans Semibold" size="18.0" />
+                </font>
+            </Button>
+            <Button fx:id="leaderboardButton" layoutX="84.0" layoutY="182.0" mnemonicParsing="false" onAction="#onClickLeaderboard" prefHeight="42.0" prefWidth="211.0" style="-fx-border-radius: 60; -fx-background-radius: 60; -fx-background-color: #DCD7C3;" text="Leaderboard" textFill="#7c0a02">
+                <font>
+                    <Font name="Open Sans Semibold" size="18.0" />
+                </font>
+            </Button>
+            <ImageView fx:id="playImage" onMouseClicked="#onClickPlay" fitHeight="100.0" fitWidth="100.0" layoutX="141.0" layoutY="247.0" onMousePressed="#onClickPlay" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../images/play.png" />
+                </image>
+            </ImageView>
+
+        </AnchorPane>
+      <ImageView fx:id="logoutButton" onMousePressed="#onClickLogout" fitHeight="80.0" fitWidth="73.0" layoutX="633.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logoutbutton.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>
