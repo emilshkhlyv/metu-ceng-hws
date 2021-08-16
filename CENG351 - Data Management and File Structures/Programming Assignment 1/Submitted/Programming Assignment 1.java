@@ -11,11 +11,11 @@ import java.sql.Statement;
 import java.util.Arrays;
 
 public class BOOKDB implements IBOOKDB {
-    private static String user = "2280386";
-    private static String password = "3e80b4c9"; 
-    private static String host = "144.122.71.65"; 
-    private static String database = "db2280386";
-    private static int port = 8084; 
+    private static String user = "";
+    private static String password = ""; 
+    private static String host = ""; 
+    private static String database = "";
+    private static int port = ; 
 
     private Connection con;
 
