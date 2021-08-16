@@ -25,11 +25,6 @@ For ER Diagram, please click the following link:
 
 [ER Diagram](http://144.122.71.168:8080/seda.civelek/group14/src/master/documents/ER%20Diagram.png)
 
-
-For Backend Postman Collections, please click the following link:
-
-[Backend Postman Collection](http://144.122.71.168:8080/seda.civelek/group14/src/master/server/CardGameBackend.postman_collection.json)
-
 For Javadoc, please click the following link: (You can reach Javadoc Documentation by running `index.html` file in the following link)
 
 [Javadoc](http://144.122.71.168:8080/seda.civelek/group14/src/master/documents/Javadoc)
