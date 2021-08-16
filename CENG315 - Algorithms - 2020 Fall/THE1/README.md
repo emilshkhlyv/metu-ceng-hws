@@ -1,4 +1,4 @@
-###TAKE HOME EXAM 1 – MERGE & FUNKY SORT
+### TAKE HOME EXAM 1 – MERGE & FUNKY SORT
 
 ```int MergeSort (int*& arr, int size, bool ascending);```
 
