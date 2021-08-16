@@ -1,4 +1,4 @@
-###TAKE HOME EXAM 1 – MERGE & FUNKY SORT
+### TAKE HOME EXAM 1 – MERGE & FUNKY SORT
 
 ```int MergeSort (int*& arr, int size, bool ascending);```
 
@@ -20,6 +20,6 @@ In lines 1-2-3 you should round to nearest greater integer, e.g. 7*2/3 = 5
 Note that, you can get extra space for MergeSort but you need to fill the values in ```arr``` variable in a sorted manner before returning and then return the number of comparisons. Funky Sort is done in place.
 
 
-Constraints
-Array sizes are less than 10^5 for MergeSort and 1500 for FunkySort (and > 0)
+Constraints:
+- Array sizes are less than 10^5 for MergeSort and 1500 for FunkySort (and > 0)
 

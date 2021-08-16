@@ -1,4 +1,4 @@
-###TAKE HOME EXAM 2 – QUICKSORT & 3-WAY QUICKSORT
+### TAKE HOME EXAM 2 – QUICKSORT & 3-WAY QUICKSORT
 
 ```int QuickSort (int*& arr, int size, bool ascending);```
 
@@ -12,6 +12,7 @@ https://www.toptal.com/developers/sorting-algorithms/quick-sort
 
 https://www.toptal.com/developers/sorting-algorithms/quick-sort-3-way
 
-IMPORTANT: In your implementations, always choose the rightmost element as pivot.
+**IMPORTANT**: In your implementations, always choose the rightmost element as pivot.
 
-Constraints: Array sizes are less than 10^5 for both algorithms (and > 0)
+Constraints: 
+- Array sizes are less than 10^5 for both algorithms (and > 0)

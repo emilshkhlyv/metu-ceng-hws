@@ -8,8 +8,7 @@ You need to save the strongly connected components in the vector of vectors ```s
 
 Note that the node ids in ```scc``` and ```topSort``` can be in any order.
 
-Constraints
-2 < N < 128, where N is the node number
-
-Your code should work in ```O(N^2)``` complexity.
+Constraints:
+- 2 < N < 128, where N is the node number
+- Your code should work in ```O(N^2)``` complexity.
 

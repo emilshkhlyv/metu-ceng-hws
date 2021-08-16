@@ -31,4 +31,5 @@ x1,x2    : cost of exit for assembly line 1,2 respectively, each > 0
 
 In each case, optimal value should be first of the pair to be returned whereas number of calls or loops are the second.
 
-Constraints: Array sizes are less than 32 for Recursive, 256 for Memoization and 1024 for Tabular (and >= 2)
+Constraints: 
+- Array sizes are less than 32 for Recursive, 256 for Memoization and 1024 for Tabular (and >= 2)

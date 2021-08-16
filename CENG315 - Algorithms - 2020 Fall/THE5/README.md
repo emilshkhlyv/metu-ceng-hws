@@ -1,4 +1,4 @@
-###TAKE HOME EXAM 5 – WANNA BE RICH ?
+### TAKE HOME EXAM 5 – WANNA BE RICH ?
 
 ```int BuyStocks (int**& market, int n1, int n2, vector<int>& solution);```
 
@@ -21,7 +21,7 @@ n2  : number of total stocks
 solution  : your solution stored in this vector  where $solution[i]$ denotes the bought stock in time i
 ```
 
-Constraints: n1 <= n2 < 128, (and n1 > 0). Market values are from the set {-50, -49, ... 49, 50}.
-
-Your code should work in O(n1*n2) complexity.
+Constraints: 
+- n1 <= n2 < 128, (and n1 > 0). Market values are from the set {-50, -49, ... 49, 50}.
+- Your code should work in ```O(n1*n2)``` complexity.
 

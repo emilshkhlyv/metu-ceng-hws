@@ -1,4 +1,4 @@
-###TAKE HOME EXAM 9 – Sting Matching using FSA
+### TAKE HOME EXAM 9 – Sting Matching using FSA
 
 ```char* search(char txt[], char pattern[],char alphabet[])```
 We would like to search a given pattern ```P``` on a given text ```T``` with the following features:
@@ -15,7 +15,7 @@ Your task is to construct the FSA  transition table for the given problem instan
 
 Since FSA construction is the prepossessing phase of the whole search problem, your FSA construction implementation does not have to be the most efficient one. However, the search operation should still be in linear time.
 
-Hint: For the version with wild character ```(?)``` the simplest solution acceptable is as follows: construct as many FSA as the number of characters in the alphabet by replacing the ```?``` in each one with these characters. During the search phase, you should execute each FSA simultaneously and report the matching obtained from each one.
+*Hint*: For the version with wild character ```(?)``` the simplest solution acceptable is as follows: construct as many FSA as the number of characters in the alphabet by replacing the ```?``` in each one with these characters. During the search phase, you should execute each FSA simultaneously and report the matching obtained from each one.
 
 Input
 ```
