@@ -1,0 +1,600 @@
+\documentclass[10pt,a4paper, margin=1in]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts, amsmath, pifont}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+\usepackage{pgfplots}
+
+\begin{filecontents}{q3a.dat}
+  n   xn
+ -1  1
+  0  2
+ 
+\end{filecontents}
+\begin{filecontents}{q3b.dat}
+  n   xn
+ -1  2
+  0  0
+  1  1
+ 
+\end{filecontents}
+\begin{filecontents}{q3c.dat}
+  n   xn
+ -2  2
+  -1  0
+  0  1
+ 
+\end{filecontents}
+\begin{filecontents}{q3d.dat}
+  n   xn
+ -2  2
+  -1  4
+  0  1
+  1 2
+\end{filecontents}
+\begin{filecontents}{q3e.dat}
+  n   xn
+  -1  4
+  1 2
+\end{filecontents}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+ }
+ % Write both of your names here. Fill exxxxxxx with your ceng mail address.
+ \author{
+  Shikhaliyev, Emil\\
+  \texttt{e2280386@ceng.metu.edu.tr}
+  \and
+  Civelek, Seda\\
+  \texttt{e2237147@ceng.metu.edu.tr}
+}
+\title{CENG 384 - Signals and Systems for Computer Engineers \\
+Spring 2020 \\
+Written Assignment 2}
+\begin{document}
+\maketitle
+
+
+
+\noindent\rule{19cm}{1.2pt}
+
+\begin{enumerate}
+
+\item %write the solution of q1
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q1a
+    \begin{enumerate}
+        \item  
+        The given system is: 
+        \begin{center}
+            $y[n] = \Sigma^{\infty}_{k=1} x[n-k]$.
+        \end{center} 
+        Let $x_1[n]$ be an arbitrary input to this system, and let 
+        \begin{center}
+            $y_1[n] = \Sigma^{\infty}_{k=1}x_1[n-k]$.
+        \end{center} 
+        Then consider a second input obtained by shifting $x_1[n]$ in time: 
+        \begin{center}
+            $x_2[n]=x_1[n-n_0]$.
+        \end{center} 
+        The output corresponding to $x_2[n]$ is: 
+        \begin{center}
+            $y_2[n] = \Sigma^{\infty}_{k=1} x_2[n-k] = \Sigma^{\infty}_{k=1}x_1[n-n_0-k]$.
+        \end{center}
+        Now calculate the $y_1[n]$ with time shift $n_0$
+        \begin{center}
+            $y_1[n-n_0]=\Sigma^{\infty}_{k=1}x[n-n_0-k]$.
+        \end{center}
+        We see that $y_2[n] = y_1[n-n_0]$. So, the given system is $\bold{time}$ $\bold{invariant}$.\\
+        
+        
+        \item
+        The given system is: 
+        \begin{center}
+            $y[n] = \Sigma^{\infty}_{k=1} x[n-k]$.
+        \end{center} 
+        For determining the system is linear or not, we consider two arbitrary inputs $x_1[n]$ and $x_2[n]$.
+        \begin{center}
+            $x_1[n] \to y_1[n] = \Sigma^{\infty}_{k=1} x_1[n-k]$\\
+            $x_2[n] \to y_2[n] = \Sigma^{\infty}_{k=1} x_2[n-k]$\\
+        \end{center}
+        Let $x_3[n]$ be a linear combination of $x_1[n]$ and $x_2[n]$. That is, 
+        \begin{center}
+            $x_3[n] = ax_1[n] + bx_2[n]$
+        \end{center}
+        $a$ and $b$ are arbitrary scalars. The output of input $x_3[n]$
+        \begin{equation}
+            \begin{split}
+                y_3[n] &= \Sigma^{\infty}_{k=1}x_3[n - k] \\
+                &= \Sigma^{\infty}_{k=1}ax_1[n-k]+bx_2[n-k]   \\
+                &= \Sigma^{\infty}_{k=1}ax_1[n-k] +\Sigma^{\infty}_{k=1}bx_2[n-k]  \\     
+                &= a \Sigma^{\infty}_{k=1}x_1[n-k] +b \Sigma^{\infty}_{k=1}x_2[n-k]  \\ 
+                &= a y_1[n] + by_2[n]
+            \end{split}
+        \end{equation}
+        
+        
+        \begin{center}
+            
+        \end{center}
+        So, the given system is $\bold{linear}$.\\  
+    
+        \item
+        $y[n]=\sum^{\infty}_{k=1}x[n-k]$ is $\bold{not}$ $\bold{memoryless}$, because $y[n]$ depends on values of $x[\cdot]$ before time instant $n$.\\
+        
+        \item
+        The given system is:
+        \begin{center}
+            $y[n]=\sum^{\infty}_{k=1}x[n-k]=x[n-1]+x[n-2]+x[n-3]+...$
+        \end{center}
+        The given system is $\bold{causal}$ because the value of $y[\cdot]$ at any instant $n$ depends on only the previous values of $x[\cdot]$.
+        
+        \item
+        The given system is:
+        \begin{center}
+            $x[n] \longrightarrow y[n] = \Sigma^{\infty}_{k=1} x[n-k]$
+        \end{center}
+        The inverse of the given system is:
+        \begin{center}
+            $y[n] \longrightarrow x[n] = y[n]-y[n-1]$
+        \end{center}
+        This system is $\bold{invertible}$.
+        
+        \item
+        A stable system produces a bounded output for any given bounded input. However if we try the $u[n]$ as input which is bounded, the output of the system is not bounded for that input. So, system is $\bold{not}$ $\bold{stable}$. 
+        
+        
+    \end{enumerate}
+    
+    \item %write the solution of q1b
+    \begin{enumerate}
+        \item 
+        The given system is:
+        \begin{center}
+            $y(t)=tx(2t+3)$
+        \end{center}
+        Let $x_1(2t+3)$ be an arbitrary input to this system, and let 
+        \begin{center}
+            $y_1(t) = tx_1(2t+3)$
+        \end{center}
+        Let $x_2(t)$ is an input obtained by shifting $x_1(2t+3) $ in time:
+        \begin{center}
+            $x_2(t) = x_1(2(t-t_0)+3)$
+       \end{center}
+       The output corresponding to $x_2(t)$ is:
+       \begin{center}
+           $y_2(t) = tx_2(t) = tx_1(2(t-t_0)+3)$.
+       \end{center}
+       But,
+       \begin{center}
+            $y_1(t-t_0) = (t-t_0)x_1(2(t-t_0)+3)$.    
+       \end{center}
+       As a result $y_2(t) \boldsymbol{\neq} y(t-t_0)$. So the system is $\bold{not}$ $\bold{time}$ $\bold{invariant}$.
+       
+        \item
+        $y(t)=tx(2t+3)$ is $\bold{not}$  $\bold{causal}$  because $y(\cdot)$ is depend on future values of $x(\cdot)$.
+        
+        \item
+         $y(t)=tx(2t+3)$ is $\bold{not}$ $\bold{memoryless}$ because $y(\cdot)$ is not just depend on values of $x(\cdot)$ at that time $t$. 
+         
+        \item
+        For determining the system is linear or not, we consider two arbitrary inputs $x_1(t)$ and $x_2(t)$.
+        \begin{center}
+            $x_1(t) \longrightarrow y_1(t) = tx_1(2t+3)$\\
+            $x_2(t) \longrightarrow y_2(t) = tx_2(2t+3)$
+        \end{center}
+        Let $x_3(t)$ be an linear combination of $x_1(t)$ and $x_2(t)$. That is,
+        \begin{center}
+            $x_3(t) = ax_1(t) + bx_2(t)$  
+        \end{center}
+        $a$ and $b$ are arbitrary scalars. We will provide $x_3(t)$ as an input to that system and output will be 
+        \begin{equation}
+            \begin{split}
+                y_3(t)  &= tx_3(2t+3)\\
+                        &= t(ax_1(2t+3) + bx_2(2t+3)) \\
+                        &= atx_1(2t+3) + btx_2(2t+3) \\
+                        &= ay_1(t) + by_2(t)
+            \end{split}
+        \end{equation}
+        So the  system is $\bold{linear}$.
+        
+        \item
+        The system $y(t) = tx(2t+3)$ is $\bold{not}$ $\bold{invertible}$, because $y(t) = 0$, for $t=0$ independent from the value of $x(t)$. So, we can not determine the value of $x(t)$ from the output of the system.
+        \item
+        For system $y(t) = tx(2t+3)$, a constant input $x(2t+3) = 1$ yields $y(t) = t$, which is unbounded. So the system is $\bold{unstable}$. 
+        
+        
+    \end{enumerate}
+    \end{enumerate}
+
+
+\item %write the solution of q2
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q2a
+    $x(t)-5y(t)=y'(t)$\\
+    $y'(t)+5y(t)=x(t)$\\
+    \item %write the solution of q2b
+    We can find $y(t)$ by calculating and adding $particular$ solution and $homogeneous$ solution:
+    \begin{center}
+        $y(t)=y_h(t)+y_p(t)$
+    \end{center}
+    For calculating homogeneous solution part $y_h(t)$, we need the calculation of:
+    \begin{center}
+        $y'(t) + 5y(t) = 0$
+    \end{center}
+    For that calculation We assume 
+    \begin{center}
+        $y_h(t)=Ke^{\lambda t}$
+    \end{center}
+    and plug it into differential equation. So,
+    \begin{equation}
+    \begin{split}
+       y'(t)+5y(t) & = x(t)  \\
+        K\lambda e^{\lambda t}+5Ke^{\lambda t} & = 0  \\
+        Ke^{\lambda t}(\lambda + 5)& = 0  \\
+        \lambda &= -5  \\
+    \end{split}
+    \end{equation}
+    Homogeneous solution is:
+    \begin{center}
+        $y_h(t)=K_1 e^{-5t} \text{\quad for } t>0$ \\
+    \end{center} 
+    For particular solution part $y_p$, given input $x(t)$
+    \begin{center}
+        $y_p(t)=(ae^{-t}+be^{-3t})u(t)$
+    \end{center}
+    So,
+    \begin{equation}
+        \begin{split}
+             y'(t)+5y(t) = & x(t)\\
+    (-ae^{-t}-3be^{-3t}+5ae^{-t}+5be^{-3t})u(t)= &(e^{-t}+e^{-3t})u(t)\\
+    4a = &1\\
+    2b = &1
+        \end{split}
+    \end{equation}
+    We obtain,
+    \begin{center}
+            $a=\dfrac{1}{4}$ and $b=\dfrac{1}{2}$\\
+    \end{center}
+    For getting $y(t)$, we need to add $y_h(t)$ and $y_p(t)$:
+    \begin{equation}
+        \begin{split}
+            y(t) = & y_h(t) + y_p(t)\\
+            = & K_1e^{-5t}+\dfrac{1}{4}e^{-t}+\dfrac{1}{2}e^{-3t} \text{\quad for } t>0 \\
+        \end{split}
+    \end{equation}
+    
+    System is initially at rest. So, 
+    \begin{equation}
+        \begin{split}
+            y(0)& =0.\\
+            K_1+\dfrac{1}{4}+\dfrac{1}{2} & = 0\\
+            K_1& =\dfrac{-3}{4}\\
+            y(t)& =(\dfrac{-3}{4}e^{-5t}+\dfrac{1}{4}e^{-t}+\dfrac{1}{2}e^{-3t})u(t)\\
+        \end{split}
+    \end{equation}
+    \end{enumerate}
+
+\item %write the solution of q3     
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q3a
+    \textbf{}\\
+    $x[n]=2\delta [n]+\delta [n+1]$\\
+    \begin{figure} [htbp!]
+    %\centering
+    \begin{tikzpicture}[scale=0.75] 
+      \begin{axis}[
+          axis lines=middle,
+          xlabel={$n$},
+          ylabel={$x[n]$},
+          xtick={ -2,..., 0,  ..., 2},
+          ytick={0, ..., 2},
+          ymin=0, ymax=3,
+          xmin=-3, xmax=3,
+          every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+          every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+          grid,
+        ]
+        \addplot [ycomb, black, thick, mark=*] table [x={n}, y={xn}] {q3a.dat};
+      \end{axis}
+    \end{tikzpicture}
+    \end{figure}
+    \\
+    $h[n]=\delta [n-1] +2 \delta [n+1]$\\
+    
+    \begin{figure} [htbp!]
+    %\centering
+    \begin{tikzpicture}[scale=0.75] 
+      \begin{axis}[
+          axis lines=middle,
+          xlabel={$n$},
+          ylabel={$h[n]$},
+          xtick={ -2,..., 0,  ..., 2},
+          ytick={0, ..., 2},
+          ymin=0, ymax=3,
+          xmin=-3, xmax=3,
+          every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+          every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+          grid,
+        ]
+        \addplot [ycomb, black, thick, mark=*] table [x={n}, y={xn}] {q3b.dat};
+      \end{axis}
+    \end{tikzpicture}
+    \end{figure}
+    $y[n] = x[n]*h[n]=\sum^{\infty}_{k=-\infty}x[k]h[n-k]$\\
+    \\
+    $y[n]=x[-1]h[n+1]+x[0]h[n]$ , since for all $n \neq -1,0$ $x[n]=0$\\
+    $y[n]=h[n+1]+2h[n]$\\
+   
+    
+        \begin{figure} [!htb]
+    %\centering
+    \begin{tikzpicture}[scale=0.75] 
+      \begin{axis}[
+          axis lines=middle,
+          xlabel={$n$},
+          ylabel={$h[n+1]$},
+          xtick={ -2,..., 0,  ..., 2},
+          ytick={0, ..., 2},
+          ymin=0, ymax=3,
+          xmin=-3, xmax=3,
+          every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+          every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+          grid,
+        ]
+        \addplot [ycomb, black, thick, mark=*] table [x={n}, y={xn}] {q3c.dat};
+      \end{axis}
+    \end{tikzpicture}
+    \end{figure}
+        \begin{figure} [!htb]
+    %\centering
+    \begin{tikzpicture}[scale=0.75] 
+      \begin{axis}[
+          axis lines=middle,
+          xlabel={$n$},
+          ylabel={$2h[n]$},
+          xtick={ -2,..., 0,  ..., 2},
+          ytick={0, ..., 4},
+          ymin=0, ymax=4,
+          xmin=-3, xmax=3,
+          every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+          every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+          grid,
+        ]
+        \addplot [ycomb, black, thick, mark=*] table [x={n}, y={xn}] {q3e.dat};
+      \end{axis}
+    \end{tikzpicture}
+    \end{figure}
+         \begin{figure} [!htb]
+    %\centering
+    \begin{tikzpicture}[scale=0.75] 
+      \begin{axis}[
+          axis lines=middle,
+          xlabel={$n$},
+          ylabel={$y[n]$},
+          xtick={ -2,..., 0,  ..., 2},
+          ytick={0, ..., 4},
+          ymin=0, ymax=4,
+          xmin=-3, xmax=3,
+          every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+          every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+          grid,
+        ]
+        \addplot [ycomb, black, thick, mark=*] table [x={n}, y={xn}] {q3d.dat};
+      \end{axis}
+    \end{tikzpicture}
+    \end{figure}
+    
+   
+    
+    \item %write the solution of q3b
+    We provide a solution for $y(t)$ below:
+    \begin{equation}
+    \begin{split}
+        x(t) & = u(t-1) + u(t+1)\\
+        h(t) & = e^{-t}sin(t)u(t)\\
+        y(t) & = \dfrac{dx(t)}{dt}*h(t) \\
+             & = \dfrac{d(u(t-1)+u(t+1))}{dt} * h(t)\\
+             & = \left( \frac{du(t-1)}{dt} + \frac{du(t+1)}{dt} \right) * h(t)\\
+             & = \left(\delta(t-1) + \delta(t+1) \right)*h(t)\\
+             & = \left( \delta(t-1) * h(t) \right) +  \left( \delta(t+1) * h(t) \right)\\
+             & = h(t-1) + h(t+1) \\
+             & = e^{-(t-1)}sin(t-1)u(t-1) + e^{-(t+1)}sin(t+1)u(t+1)
+    \end{split}
+    \end{equation}
+    \end{enumerate}
+
+\item %write the solution of q4
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q4a
+    $y(t)=x(t)*h(t)$ \\
+    \begin{equation}
+        \begin{split}
+             y(t)&=\int^{+\infty}_{-\infty}x(\tau)h(t-\tau)d\tau\\
+             &=\int^{+\infty}_{-\infty}e^{-\tau}u(\tau)e^{-2(t-\tau)}u(t-\tau)d\tau\\
+             &=\int^{+\infty}_{0}e^{-\tau}e^{-2(t-\tau)}u(t-\tau)d\tau\\
+             &=\int^{t}_{0}e^{-\tau}e^{-2(t-\tau)}d\tau\\
+             &=\int^{t}_{0}e^{-\tau}e^{-2t}e^{2\tau}d\tau\\
+             &=e^{-2t}\int^{t}_{0}e^{-\tau}e^{2\tau}d\tau\\
+             &=e^{-2t}\int^{t}_{0}e^{\tau}d\tau\\
+             &=e^{-2t}\left(e^\tau \right)|^{t}_{0}\\
+             &=e^{-2t}\left(e^t - e^0 \right)\\
+             &=e^{-2t}\left(e^t - 1 \right)\\
+             &=e^{-t}-e^{-2t}\\
+        \end{split}
+    \end{equation}
+    Thus, the convolution of $x(t)$ with $h(t)$:
+    \begin{equation}
+        \begin{split}
+            y(t) &= x(t) * h(t)\\
+            y(t) &= 0, \text{\quad for } t < 0\\
+            y(t) &= \left( e^{-t}-e^{-2t} \right)u(t)
+        \end{split}
+    \end{equation}
+
+    \item %write the solution of q4b
+    For this question, we need to consider three cases for the values of t:
+    \begin{equation}
+		y(t) = \begin{cases}  
+		        0 & \mbox{if } t < 0 \\ 
+				\int_{0}^{t} e^{3(t - \tau)} d\tau & \mbox{if } 0 \leq t \leq 1 \\
+				\int_{0}^{1} e^{3(t - \tau)} d\tau & \mbox{if } 1 < t \end{cases}
+	\end{equation}
+	After evaluation of integrals:
+	\begin{equation}
+		y(t) = \begin{cases}  
+		        0 &\mbox{if } t < 0 \\ 
+				\dfrac{1}{3}\left( e^{3t} - 1 \right) & \mbox{if } 0 \leq t \leq 1 \\
+				- \dfrac{1}{3} \left(e^{3(t-1)}-e^{3t}\right) & \mbox{if } 1 < t \end{cases}
+	\end{equation}
+    \end{enumerate}
+
+\item %write the solution of q5
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q5a
+    $2y[n+2]-3y[n+1]+y[n]=0$ \\
+    The characteristic polynomial of the system is:
+    \begin{equation}
+        \begin{split}
+            D(z)=2z^2-3z+1&=0\\
+            (2z-1)(z-1)&=0\\
+            z_1= \frac{1}{2} \text{\quad and } z_2 &=1
+        \end{split}
+    \end{equation}
+    $y[n]=c_1\left(\frac{1}{2}\right)^n+c_2$\\
+    Calculation of $c1$ and $c2$:
+    \begin{equation}
+        \begin{split}
+            y[0]&=c_1+c_2=1\\
+            y[1]&=\frac{c_1}{2}+c_2=0\\
+            c_1 &= 2\text{\quad and } c_2 = -1
+        \end{split}
+    \end{equation}
+    
+    \text{Overall solution is:} 
+   \begin{equation}
+       y[n]=2 \left( \frac{1}{2}\right)^n-1\\
+   \end{equation} 
+    
+    \item %write the solution of q5b
+    We assume $y(t)=Ke^{\lambda t}$ and derivatives of $y(t)$:\\
+    \begin{equation}
+        \begin{split}
+            y'(t)&=K\lambda e^{\lambda t}\\
+    y''(t)&=K \lambda^2 e^{\lambda t}\\
+    y^{(3)}(t)&=K \lambda^3 e^{\lambda t}\\
+        \end{split}
+    \end{equation}
+    Put these values into the equation:
+    \begin{equation}
+        \begin{split}
+            K\lambda^3e^{\lambda t}-3K\lambda^2e^{\lambda t}+4K\lambda e^{\lambda t}-2Ke^{\lambda t}&=0\\
+            Ke^{\lambda t}(\lambda^3-3\lambda^2+4\lambda-2)&=0\\
+            (\lambda-1)(\lambda^2-2\lambda+2)&=0\\
+            \lambda_1 =1, \lambda_2=1-j, \lambda_3&=1+j\\
+        \end{split}
+    \end{equation}
+    
+    \text{Solution of y(t) and corresponding derivatives are the following:}
+    \begin{equation}
+        \begin{split}
+            y(t)&=K_1e^t+K_2e^t\sin(t)+K_3e^t\cos(t)\\
+            y'(t)&=K_1e^t+K_2e^t\sin(t)+K_2e^t\cos(t)+K_3e^t\cos(t)-K_3e^t\sin(t)\\
+            y''(t)&=K_1e^t+2K_2e^t\cos(t)-2K_3e^t\sin(t)\\
+        \end{split}
+    \end{equation}
+    
+    \text{To find constant coefficients, we try initial conditions:}
+    \begin{equation}
+        \begin{split}
+            y(0)=K_1+K_3&=3\\
+            y'(0)=K_1+K_2+K_3&=1\\
+            y''(0)=K_1+2K_2&=2\\
+            K_1=6, K_2=-2, K_3&=-3 \\
+        \end{split}
+    \end{equation}
+    
+    
+    \text{Overall solution is:}
+    \begin{equation}
+        \begin{split}
+            y(t)=6e^t-2e^t\sin(t)-3e^t\cos(t)\\
+        \end{split}
+    \end{equation}
+    \end{enumerate}
+
+
+\item %write the solution of q6
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q6a
+    \begin{equation}
+        \begin{split}
+            w[n]-\dfrac{1}{2}w[n-1]=x[n]\\
+        \end{split}
+    \end{equation}
+    \text{We can express $w[n]$ as following:}\\
+    \begin{equation}
+            w[n]=x[n]+\dfrac{1}{2}w[n-1]\\
+    \end{equation}
+    We need an initial condition. So,
+    \begin{equation}
+    \begin{split}
+        x[n]&= A \delta[n]\\
+        w[0]&= x[0]+\dfrac{1}{2}w[-1] = A,\\
+        w[1]&= x[1]+\dfrac{1}{2}w[0] = \dfrac{1}{2}A,\\
+        w[2]&= x[2]+\dfrac{1}{2}w[1] = \left(  \dfrac{1}{2} \right)^2 A\\
+        \cdot\\
+        \cdot\\
+        \cdot\\
+        w[n]&=x[n]+\dfrac{1}{2}w[n-1]=\left(\dfrac{1}{2}\right)^n A.
+    \end{split}
+    \end{equation}
+    Setting A = 1, the impulse response for the system is considered as:
+    \begin{equation}
+        h_0[n] = \left( \dfrac{1}{2}\right)^nu[n]
+    \end{equation}
+    
+    \item %write the solution of q6b
+    Overall impulse response of the system is the following:
+    \begin{equation}
+        \begin{split}
+            h[n] &= h_0[n]*h_0[n]\\
+            &=\Sigma^{\infty}_{k=-\infty}h_0[k]h_0[n-k]\\
+            &=\Sigma^{\infty}_{k=0}h_0[k]h_0[n-k]\\
+            &=\Sigma^{n}_{k=0}\left(\dfrac{1}{2}\right)^k\left(\dfrac{1}{2}\right)^{n-k}\\
+            &=\Sigma^{n}_{k=0}\left(\dfrac{1}{2}\right)^n\\
+            &=(n+1)\left(\dfrac{1}{2}\right)^n
+        \end{split}
+    \end{equation}
+
+    \item %write the solution of q6c
+    \begin{equation}
+        \begin{split}
+            x[n] &= w[n] -\dfrac{1}{2}w[n-1] \\
+            w[n] &= y[n] -\dfrac{1}{2}y[n-1] \\
+            w[n-1]&=y[n-1]-\dfrac{1}{2}y[n-2]\\
+            x[n] &= y[n] -\dfrac{1}{2}y[n-1] -\dfrac{1}{2} \left(y[n-1]-\dfrac{1}{2}y[n-2] \right)\\
+            x[n] &= y[n] -\dfrac{1}{2}y[n-1] -\dfrac{1}{2} y[n-1]+\dfrac{1}{4}y[n-2]\\
+            x[n] &= y[n] -y[n-1] +\dfrac{1}{4}y[n-2]\\
+        \end{split}
+    \end{equation}
+    \end{enumerate}
+
+\end{enumerate}
+\end{document}
+

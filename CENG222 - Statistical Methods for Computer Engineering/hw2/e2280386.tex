@@ -1,0 +1,272 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+\usepackage{indentfirst}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\section*{Student Information}
+
+Name : Emil Shikhaliyev\\
+
+ID : 2280386\\
+
+
+\section*{Answer 1}
+\subsection*{a)}
+First we should calculate the \textbf{probability mass function} for all values of \textbf{X}:
+\begin{equation}
+    \begin{split}
+        P_X (0) = P\{X = 0\} = \sum_{y} P_{(X, Y)} (0, y) = P(0, 0) + P(0, 2) = \dfrac{1}{12} + \dfrac{2}{12} = \dfrac{3}{12} \\
+         P_X (1) = P\{X = 1\} = \sum_{y} P_{(X, Y)} (1, y) = P(1, 0) + P(1, 2) = \dfrac{4}{12} + \dfrac{2}{12} = \dfrac{6}{12} \\
+         P_X (2) = P\{X = 2\} = \sum_{y} P_{(X, Y)} (2, y) = P(2, 0) + P(2, 2) = \dfrac{1}{12} + \dfrac{2}{12} = \dfrac{3}{12} \\
+    \end{split}
+\end{equation}
+Calculation of \textbf{expected value} of random variable \textbf{X}:
+\begin{equation}
+    \begin{split}
+        \mu = E(X) &= \sum_{x} xP(x) \\
+        & = 0\cdot P(0) + 1 \cdot P(1) + 2 \cdot P(2) \\
+        & = 0 \cdot \dfrac{3}{12} + 1 \cdot \dfrac{6}{12} + 2 \cdot \dfrac{3}{12} = \dfrac{6}{12} + \dfrac{6}{12} = 1
+    \end{split}
+\end{equation}
+Calculation of \textbf{variance} of random variable \textbf{X}:
+\begin{equation}
+    \begin{split}
+        \sigma^2 = \text{Var}(x) & = \sum_{x} (x-\mu)^{2} P(x) \\
+        & = (0 - 1)^2 \cdot P(0) + (1-1)^2 \cdot P(1) + (2 - 1)^2 \cdot P(2) \\
+        & = 1 \cdot \dfrac{3}{12} + 1 \cdot \dfrac{3}{12}  = \dfrac{3}{12} + \dfrac{3}{12} = \dfrac{6}{12} = \dfrac{1}{2}
+    \end{split}
+\end{equation}
+\subsection*{b)}
+Let $Z = X + Y$. So, \textbf{minimum} value of $Z$ is $0 + 0 =0$ and \textbf{maximum} value of $Z$ is $2+2 = 4$. Next, \\
+\begin{equation}
+    \begin{split}
+        P_Z (0) &= P\{Z = 0\} \\ 
+                &= P\{X = 0, Y = 0\} = \dfrac{1}{12}\\
+        P_Z (1) &= P\{Z = 1\} \\
+                &= P\{X = 1, Y = 0\} = \dfrac{4}{12}\\
+        P_Z (2) &= P\{Z = 2\} \\
+                &= P\{X = 0, Y = 2\} + P\{X = 2, Y = 0\} = \dfrac{2}{12} + \dfrac{1}{12} = \dfrac{3}{12}\\
+        P_Z (3) &= P\{Z = 3\}\\
+                &= P\{X = 1, Y = 2\} = \dfrac{2}{12}\\
+        P_Z (4) &= P\{Z = 4\}\\
+                &= P\{X = 2, Y = 2\} = \dfrac{2}{12}
+    \end{split}
+\end{equation}
+\subsection*{c)}
+First we should calculate the \textbf{probability mass function} for all values of \textbf{Y}:
+\begin{equation}
+    \begin{split}
+        P_Y (0) = P\{Y = 0\} = \sum_x P_{(X,Y)} (x, 0) = P(0, 0) + P(1, 0) + P(2, 0) = \dfrac{1}{12} + \dfrac{4}{12} + \dfrac{1}{12} = \dfrac{6}{12}\\
+        P_Y (2) = P\{Y = 2\} = \sum_x P_{(X,Y)} (x, 2) = P(0, 2) + P(1, 2) + P(2, 2) = \dfrac{2}{12} + \dfrac{2}{12} + \dfrac{2}{12} = \dfrac{6}{12}\\
+    \end{split}
+\end{equation}
+After that we should calculate the \textbf{expected value} of random variable Y: \\
+\begin{equation}
+    \begin{split}
+        \mu = E(Y) &= \sum_y yP(Y) \\
+        &= 0 \cdot P(0) + 2 \cdot P(2) = 0 \cdot \dfrac{6}{12} + 2 \cdot \dfrac{6}{12} = \dfrac{12}{12} = 1.  
+    \end{split}
+\end{equation}
+The formula of \textbf{covariance} of random variables X and Y is: 
+\begin{equation}
+    \begin{split}
+        \text{Cov}(X, Y) = \textbf{E}(XY) - \textbf{E}(X)\textbf{E}(Y) 
+    \end{split}
+\end{equation}
+\textbf{E}$(X)$ = 1. (obtained from 1.(a))\\
+\textbf{E}$(Y)$ = 1.\\
+We should calculate \textbf{E}$(XY)$:
+\begin{equation}
+    \begin{split}
+        \textbf{E}(XY) &= \sum _ x \sum _ y xyP(x, y) \\
+        &= (0)(0)P(0,0) + (0)(2)P(0,2) + (1)(0)P(1,0) + (1)(2)P(1,2) + (2)(0)P(2,0) + (2)(2)P(2,2)\\
+        &= (1)(2)P(1,2) + (2)(2)P(2,2)\\ 
+        &= 1 \cdot 2 \cdot \dfrac{2}{12} +  2 \cdot 2 \cdot \dfrac{2}{12} \\
+        &= \dfrac{4}{12} + \dfrac{8}{12} = \dfrac{12}{12} = 1.
+    \end{split}
+\end{equation}
+Calculation of \textbf{covariance} of random variables X and Y:
+\begin{equation}
+    \begin{split}
+        \text{Cov}(X,Y) &= \textbf{E}(XY) - \textbf{E}(X)\textbf{E}(Y)\\
+                        &= 1 - 1 \cdot 1  = 0
+    \end{split}
+\end{equation}
+
+\subsection*{d)}
+The formula of \textbf{covariance} is:
+\begin{equation}
+    \begin{split}
+        \text{Cov}(X, Y) = \textbf{E}(XY) - \textbf{E}(X)\textbf{E}(Y) 
+    \end{split}
+\end{equation}
+For \textbf{independent} X and Y, \textit{(from (3.5) on page 49 on textbook)}
+\begin{equation}
+    \begin{split}
+        \textbf{E}(XY) = \textbf{E}(X)\textbf{E}(Y)
+    \end{split}
+\end{equation}
+So, 
+\begin{equation}
+    \begin{split}
+        \text{Cov}(X,Y) &= \textbf{E}(XY) - \textbf{E}(X)\textbf{E}(Y)\\
+                        &= \textbf{E}(X)\textbf{E}(Y) - \textbf{E}(X)\textbf{E}(Y) = 0.
+    \end{split}
+\end{equation}
+\subsection*{e)}
+If random variables $X$ and $Y$ are independent:
+\begin{equation}
+    \begin{split}
+        P_{(X,Y)}(x,y) = P_X (x) P_Y (y)
+    \end{split}
+\end{equation}
+We should try for all values of random variables X and Y:
+\begin{equation}
+    \begin{split}
+        P_X (0) P_Y (0) = \dfrac{3}{12} \cdot \dfrac{6}{12} = \dfrac{1}{4} \cdot \dfrac{1}{2} = \dfrac{1}{8} \neq P_{(X,Y)}(x,y) = \dfrac{1}{12}
+    \end{split}
+\end{equation} 
+So, the random variables X and Y are \textbf{not independent}.
+\section*{Answer 2}
+\subsection*{a)}
+We can solve this question with \textbf{Binomial distribution}.
+Binomial probability mass function is:
+\begin{equation}
+    \begin{split}
+        P(x) = P\{X = x\} = \binom{n}{x} p^x q^{n-x}
+    \end{split}
+\end{equation}
+We need to find probability of $P\{X \geq 3\}$, where $X$ is the number of pens out of $12$, which are broken. $X$ has binomial distribution with parameters $n = 12$, $p = 0.2$ and $q = 0.8$. We can obtain $P\{X \geq 3\}$ in this way:
+\begin{equation}
+    \begin{split}
+        P\{X \geq 3\} = 1 - F(2)
+    \end{split}
+\end{equation}
+The value of $F(2) = 0.558$, obtained from \textit{Table A2} from textbook. Let's calculate $F(2)$ by ourselves:
+\begin{equation}
+    \begin{split}
+        F(2) &= \sum_{x = 0}^{2} P(x) \\
+        &= \sum_{x = 0}^{2} \binom{n}{x} p^x q^{n-x}\\
+        &= \binom{12}{0} (0.2)^{0} (0.8)^{12} + \binom{12}{1} (0.2)^{1} (0.8)^{11} + \binom{12}{2} (0.2)^{2} (0.8)^{10}\\
+        &= 1 \cdot 1 \cdot 0.0687 + 12\cdot 0.2 \cdot 0.0858 + 66 \cdot 0.04 \cdot 0.1073 \\
+        &= 0.0687 + 0.2059 + 0.2832 \\
+        &= 0.5578 \approx 0.558
+    \end{split}
+\end{equation}
+After that we can put this value in equation (15):
+\begin{equation}
+    \begin{split}
+         P\{X \geq 3\} = 1 - F(2) = 1 - 0.558 = 0.442
+    \end{split}
+\end{equation}
+\subsection*{b)}
+We can solve this question with \textbf{Negative Binomial distribution}. Negative Binomial probability function is:
+\begin{equation}
+    \begin{split}
+        P(x) = \binom{x-1}{k-1} p^k (1-p)^{x-k}.
+    \end{split}
+\end{equation}
+Where $p$ is probability of success \textit{(being broken)}.
+We need to find probability of $P(5)$ with parameters $k = 2$ and $p = 0.2$. So,
+\begin{equation}
+    \begin{split}
+        P(5) &= \binom{4}{1} (0.2)^2 (0.8)^3\\
+             &= 4 \cdot 0.04 \cdot 0.512 \\
+             &= 0.08192 \approx 0.082
+    \end{split}
+\end{equation}
+\subsection*{c)}
+In this question we can use property of \textbf{Negative Binomial distribution}. \textit{(3.12) on page 63 from textbook}
+\begin{equation}
+    \begin{split}
+        E(X) = \dfrac{k}{p} = \dfrac{4}{0.2} = 20
+    \end{split}
+\end{equation}
+\section*{Answer 3}
+\subsection*{a)}
+In this question: 
+\begin{equation}
+    \begin{split}
+        \mu = E(X) = 4
+    \end{split}
+\end{equation}
+We can calculate $\lambda$:
+\begin{equation}
+    \begin{split}
+        \lambda = \dfrac{1}{\mu} = \dfrac{1}{4} = \dfrac{1}{4}
+    \end{split}
+\end{equation}
+Now we should calculate $P(X\geq2)$:
+\begin{equation}
+    \begin{split}
+        P(X\geq2)= 1 - F(2) = 1 - (1 -e^{-\lambda x}) = e^{-\lambda x} = e^{-\frac{1}{4} \cdot 2} = e^{-\frac{1}{2}} = 0.6065
+    \end{split}
+\end{equation}
+\subsection*{b)}
+We can solve this question with \textbf{Poisson distribution}.\\
+First we should calculate the value of $\lambda$.
+If the average number of calls in 4 hours is $1$. So, the average number of calls in 10 hours is $2.5$. So, 
+\begin{equation}
+    \begin{split}
+        \lambda = 2.5   
+    \end{split}
+\end{equation}
+Now we can find the answer
+\begin{equation}
+    \begin{split}
+        \textbf{P}\{X \leq 3 \} = F_{X}(3) = \sum_{x = 0}^{3} e^{- \lambda} \dfrac{\lambda^x}{x!} = \sum_{x = 0}^{3} e^{- 2.5} \dfrac{\left(2.5\right)^x}{x!} = 0.758
+    \end{split}
+\end{equation}
+The value of $F_X(3)$ obtained from \textit{Table A3 on textbook}.
+\subsection*{c)}
+Exponential distribution has \textbf{memoryless property}:
+\begin{equation}
+    \begin{split}
+        \textbf{P}\{T>t+x|T>t\} = \textbf{P}\{T>x\}
+    \end{split}
+\end{equation}
+That means we should just consider 6 hours part. After that we can solve this question with \textbf{Poisson distribution}. That's why first we should find the value of $\lambda$. If the average number of calls in 4 hours is $1$. So, the average number of calls in 6 hours is $1.5$. So,
+\begin{equation}
+    \begin{split}
+        \lambda = 1.5
+    \end{split}
+\end{equation}
+We should divide this question into 4 parts.\\
+\textbf{1)} In 10 hours period, Bob didn't get any call. We should calculate the probability of getting at most 3 calls in 6 hours period:
+\begin{equation}
+    \begin{split}
+        \textbf{P}\{X \leq 3 \} = F_{X}(3) = \sum_{x = 0}^{3} e^{- \lambda} \dfrac{\lambda^x}{x!} = \sum_{x = 0}^{3} e^{- 1.5} \dfrac{\left(1.5\right)^x}{x!} = 0.934
+    \end{split}
+\end{equation}
+\textbf{2)} In 10 hours period Bob got 1 call. We should calculate the probability of getting at most 2 calls in 6 hours period: 
+\begin{equation}
+    \begin{split}
+        \textbf{P}\{X \leq 2 \} = F_{X}(2) = \sum_{x = 0}^{2} e^{- \lambda} \dfrac{\lambda^x}{x!} = \sum_{x = 0}^{2} e^{- 1.5} \dfrac{\left(1.5\right)^x}{x!} = 0.809
+    \end{split}
+\end{equation}
+\textbf{3)} In 10 hours period Bob got 2 calls. We should calculate the probability of getting at most 1 call in 6 hours period: 
+\begin{equation}
+    \begin{split}
+        \textbf{P}\{X \leq 1 \} = F_{X}(1) = \sum_{x = 0}^{1} e^{- \lambda} \dfrac{\lambda^x}{x!} = \sum_{x = 0}^{1} e^{- 1.5} \dfrac{\left(1.5\right)^x}{x!} = 0.558
+    \end{split}
+\end{equation}
+\textbf{4)} In 10 hours period Bob got 3 calls. We should calculate the probability of not getting a call in 6 hours period: 
+\begin{equation}
+    \begin{split}
+        \textbf{P}\{X \leq 0 \} = F_{X}(0) = e^{- 1.5} = 0.223
+    \end{split}
+\end{equation}
+All values obtained from \textit{Table A3. Poisson distribution from textbook}.
+\end{document}
